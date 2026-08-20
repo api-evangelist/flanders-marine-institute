@@ -1,0 +1,50 @@
+aid: flanders-marine-institute
+name: Flanders Marine Institute
+type: Index
+specificationVersion: '0.23'
+created: '2026-08-20'
+modified: '2026-08-20'
+url: https://raw.githubusercontent.com/api-evangelist/flanders-marine-institute/refs/heads/main/apis.yml
+description: The Flanders Marine Institute (Vlaams Instituut voor de Zee, VLIZ) is the Belgian coordination and
+  information platform for marine research, and the operator of Marine Regions, the World Register of Marine Species
+  gazetteer infrastructure and the EMODnet data portals. Its geospatial estate is one of the largest openly callable
+  marine OGC surfaces in Europe.
+x-ogc-member:
+  level: Explorer
+  member_type: Non-Profit
+  country: Belgium
+  source: https://portal.ogc.org/services/srv_active_members_csv_new.php
+tags:
+- Geospatial
+- OGC
+- WMS
+- WFS
+- Open Access
+- GIS
+common:
+- type: Website
+  url: https://geo.vliz.be/
+apis:
+- aid: flanders-marine-institute:ogc-web-services
+  name: Flanders Marine Institute OGC Web Services (WMS / WFS)
+  description: 'OGC-standard web services served from a GeoServer instance. Verified anonymously on 2026-08-20:
+    a WMS 1.3.0 GetCapabilities document declaring 1146 layers and a WFS 2.0.0 GetCapabilities document declaring
+    651 feature types returned HTTP 200 and is saved here verbatim. These GetCapabilities documents are the machine-readable
+    contract for this surface — there is no OpenAPI for the classic OGC services.'
+  humanURL: https://geo.vliz.be/
+  baseURL: https://geo.vliz.be/geoserver/ows
+  tags:
+  - Geospatial
+  - OGC
+  - WMS
+  - WFS
+  - Open Access
+  properties:
+  - type: GetCapabilities
+    url: openapi/flanders-marine-institute-wms-capabilities.xml
+  - type: WMS
+    url: https://geo.vliz.be/geoserver/ows?service=WMS&request=GetCapabilities&version=1.3.0
+  - type: GetCapabilities
+    url: openapi/flanders-marine-institute-wfs-capabilities.xml
+  - type: WFS
+    url: https://geo.vliz.be/geoserver/ows?service=WFS&request=GetCapabilities&version=2.0.0
